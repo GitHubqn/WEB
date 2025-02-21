@@ -3,35 +3,66 @@
 	font-family: Roboto,sans-serif;
 }
 
+
+
 td{
 	color:grey;
-}
-td:hover{
-	color:black;
 }
 
 .nemetall{
 	background-color: #a0ffa0;
 }
 
+html:has(.nemetall:hover) .nemetall {
+	color: black;
+}
+
 .blagorod {
 	background-color: #c0ffff;
 }
+
+html:has(.blagorod:hover) .blagorod {
+	color: black;
+}
+
 .sheloch-metall {
 	background-color: #FF6666;
 }
+html:has(.sheloch-metall:hover) .sheloch-metall {
+	color: black;
+}
+
 .zemel-metall {
 	background-color: #FFDEAD;
 }
+html:has(.zemel-metall:hover) .zemel-metall {
+	color: black;
+}
+
 .polumetall {
 	background-color: #cccc99;
 }
+html:has(.polumetall:hover) .polumetall {
+	color: black;
+}
+
 .galogen {
 	background-color: #ffff99;
 }
+html:has(.galogen:hover) .galogen {
+	color: black;
+}
+
 .postmetall {
 	background-color: #cccccc;
 }
+html:has(.postmetall:hover) .postmetall {
+	color: black;
+}
+
 .perehmetall {
 	background-color: #ffc0c0;
+}
+html:has(.perehmetall:hover) .perehmetall {
+	color: black;
 }
