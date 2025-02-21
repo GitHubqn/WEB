@@ -3,6 +3,13 @@
 	font-family: Roboto,sans-serif;
 }
 
+td{
+	color:grey;
+}
+td:hover{
+	color:black;
+}
+
 .nemetall{
 	background-color: #a0ffa0;
 }
