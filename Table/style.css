@@ -3,19 +3,7 @@
 	font-family: Roboto,sans-serif;
 }
 
-@keyframes a-nemetall {
-	from {
-	}
-
-	to {
-		background-color: #a0ffa0;
-	}
-}
-
-.nemetall:hover{
-	background-color: #a0ffa0;
-}
-.nemetall:hover ~ .nemetall {
+.nemetall{
 	background-color: #a0ffa0;
 }
 
