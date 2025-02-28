@@ -10,7 +10,17 @@ Shadows:
 https://www.w3schools.com/cssref/css3_pr_text-shadow.php
 https://www.w3schools.com/cssref/css3_pr_box-shadow.php
 
+CSS Units:
+https://www.w3schools.com/cssref/css_units.php
+
 TODO:
+Сверстать калькулятор: 
+	https://github.com/okovtun/PD_311_WEB/blob/master/05-Layout/img/calc.png
+
+DONE:
+Прислать ссылку на свой GitHub-хостинг;
+
+DONE:
 При наведении на элемент в теблице Менделеева должны подсвечиваться все элементы данной группы;
 
 DONE:

@@ -3,10 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.34930.48
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{51403EF1-5DBF-4FAD-A0A1-E0791E1C34F2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{370174B5-8E3D-4462-B78F-701711275AC6}"
 	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
-		style.css = style.css
+		calc.css = calc.css
+		calc.html = calc.html
 	EndProjectSection
 EndProject
 Global
@@ -14,6 +14,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6ADB3B06-0B9F-4AD2-8D63-A352DB160509}
+		SolutionGuid = {8E0B2A77-83E7-4B45-ACCE-7481C7363FD4}
 	EndGlobalSection
 EndGlobal
