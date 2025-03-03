@@ -1,68 +1,74 @@
 ﻿body
 {
 }
+
 #desktop
 {
 	/*https: //www.w3schools.com/cssref/css_units.php width:98vw;*/
 	/*height: 95vh;*/
-	height:600px;
+	height: 600px;
 	/*background-color: darkgreen;*/
+	background-image:url("img/bliss.jpg");
+	background-size:100% 100%;
 	display: flex;
 	justify-content: center; /*Выравнивание по горизонтали*/
 	align-items: center; /*Выравнивание по вертикали*/
 }
-.main-window
-{
-	width:520px;
-	height:max-content;
+
+.main-window {
+	width: max-content;
+	height: max-content;
 	/*border:solid 1px;*/
-	font-family:Tahoma;
+	font-family: Tahoma;
 }
+
 .title-bar
 {
-	background-image: linear-gradient(#23AAFF, #0259e6,#0259e6,#0259e6,#0259e6, #0367fa, #0367fa, #0367fa, #0367fa,#2379ed);
-	height: 32px;
+	background-image: linear-gradient(#23CCFF, #0259e6,#0259e6/*,#0259e6,#0259e6*/, #0367fa, #0367fa, /*#0367fa, #0367fa,*/#2379ed);
+	height: 48px;
 	border-radius: 8px 8px 0 0;
 	box-shadow: inset 0px 0px 4px 1px #002195;
-
-	color:white;
-	text-shadow:1px 1px darkblue;
-
-/**/
-
-	display:flex;
-	align-items:center;
-	justify-content:space-between;
-	
+	color: white;
+	text-shadow: 1px 1px darkblue;
+	/**/
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
+
 .icon
-{
-	width:24px;
-	height:24px;
-	margin:8px;
-}
-.window-control-buttons, .window-title
-{
-	display:flex;
-	align-items:center;
-	margin:4px;
-}
-.window-control-button
 {
 	width: 24px;
 	height: 24px;
+	margin: 8px;
+}
+
+.window-control-buttons, .window-title
+{
+	display: flex;
+	align-items: center;
+	margin: 8px;
+}
+
+.window-control-button
+{
+	width: 32px;
+	height: 32px;
 	margin: 1px;
 	color: white;
 	font-weight: 500;
 	background-image: linear-gradient(to bottom right, #55a1f5, #2760A2);
 	box-shadow: inset 1px 1px 3px 1px #77a1f5;
-	border:solid 1px white;
-	border-radius:2px;
+	border: solid 1px white;
+	border-radius: 2px;
 }
-	.window-control-button:hover, button:disabled
+
+	.window-control-button:hover, button:disabled, button:disabled:hover
 	{
 		border-color: lightgrey;
+		box-shadow:none;
 	}
+
 	.window-control-button:active
 	{
 		border-color: gray;
@@ -84,90 +90,136 @@
 	height: 100%;
 	/*border-left: solid 4px transparent;*/
 	border: solid 5px;
-	border-top:0;
+	border-top: 0;
 	/*border-right: solid 4px transparent;
 	border-bottom: solid 4px transparent;*/
 	/*border-image: linear-gradient(to right, #0069fc, #008bfF, #0069fc);*/
 	border-image: linear-gradient(to right, #0069fc, #55BbfF, #0069fc) 1 round;
-
-	display:flex;
-	flex-direction:column;
+	/*-----------------------------*/
+	display: flex;
+	flex-direction: column;
 }
-.menu-bar > input[type=button]
+
+.menu-bar
 {
-	border:none;
-	background-color:transparent;
-}
-
-.menu-bar > input[type=button]:hover {
-		/*border: none;
-	background-color: transparent;*/
-	box-shadow: 0px 0px 0px 1px gray;
-}
-.menu-bar {
 	box-shadow: 0px 1px 0px 0px white;
 	padding: 2px;
 }
-.client-rect > input[type=text]{
+
+	.menu-bar > input[type=button]
+	{
+		border: none;
+		background-color: transparent;
+	}
+
+		.menu-bar > input[type=button]:hover
+		{
+			box-shadow: 0px 0px 0px 1px grey;
+		}
+
+.client-rect > input[type=text]
+{
 	margin: 10px;
 	text-align: right;
 	font-size: 18px;
 }
 
-.display-buttons{
-	display:flex;
-	margin: 10px;
+.display-buttons
+{
+	display: flex;
+	/*margin: 0 10px;*/
+	justify-content:space-around;
 }
-.display-buttons > div{
+
+#square
+{
 	width: 40px;
 	height: 40px;
-	border: inset 2px; 
-	margin: 8px;
+	border: inset 2px;
+	margin: 10px 10px;
 }
-.display-buttons > button{
-	width: 128px;
+
+.display-buttons > button
+{
+	width: 100px;
 	color: red;
-	margin: 5px 5px;
+	margin: 8px 5px;
 }
 
-.buttons{
-	display:flex;
-	flex-direction:row;
-}
-#memory-buttons{
-	width:64px;
-	margin:10px;
-	display:flex;
-	flex-direction:column;
-}
-#memory-buttons > button{
-	width: 54px;
-	height: 44px;
-	margin: 5px;
-	color:red;
+#memory-buttons
+{
+	width: 64px;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	border: solid 1px;
 }
 
-#digits {
+	#memory-buttons > button
+	{
+		width: 54px;
+		height: 44px;
+		margin: 5px 5px;
+		color: red;
+	}
+
+.buttons
+{
+	display: flex;
+	flex-direction: row;
+	border: solid 1px;
+}
+
+#digits
+{
 	display: grid;
 	grid-template-rows: 44px 44px 44px 44px;
 	grid-template-columns: 54px 54px 54px;
 	grid-gap: 10px;
-	margin: 10px;
+	margin: 10px 5px;
 	padding: 5px;
+	border: solid 1px;
 }
-	#digits > button {
+
+	#digits > button
+	{
 		width: 54px;
 		height: 44px;
 		color: blue;
+		/*margin:5px;*/
 	}
-button{
-	border:solid 1px darkblue;
-	border-radius:5px;
+
+button
+{
+	border: solid 1px darkblue;
+	border-radius: 5px;
+	box-shadow: inset 0px -3px 5px 1px lightgrey;
 }
-button:hover{
-	background-color:lightblue;
+	button:hover
+	{
+		background-color:lightgray;
+	}
+	button:active
+	{
+		box-shadow:inset 0px 0px 0px 1px grey;
+	}
+
+#operations {
+	display: grid;
+	grid-template-rows: 44px 44px 44px 44px;
+	grid-template-columns: 54px 54px;
+	grid-gap: 10px;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px;
 }
+	#operations > button {
+		width: 54px;
+		height: 44px;
+		color: red;
+		/*margin:5px;*/
+	}
 .debug
 {
-	border:solid 1px black;
+	border: solid 1px black;
 }
