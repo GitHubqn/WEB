@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.34930.48
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D5D3ECB-0284-4CB2-9C9C-4DBF3FAB300F}"
+	ProjectSection(SolutionItems) = preProject
+		arrays.css = arrays.css
+		arrays.html = arrays.html
+		datatypes.css = datatypes.css
+		datatypes.html = datatypes.html
+		date_time.js = date_time.js
+		events.css = events.css
+		events.html = events.html
+		events1.js = events1.js
+		events2.js = events2.js
+		index.html = index.html
+		intro.html = intro.html
+		switch_button.js = switch_button.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0945F52-BCD8-48CE-A0D5-A1E4D436C94A}
+	EndGlobalSection
+EndGlobal
