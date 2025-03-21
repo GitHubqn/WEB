@@ -1,0 +1,14 @@
+﻿body
+{
+    background-color:black;
+}
+.card{
+    width:max-content;
+    background-color:white;
+    border-style:solid;
+    border-radius:20px;
+    border-color:gray;
+    margin:20px;
+    padding:20px;
+    padding-top:0px;
+}

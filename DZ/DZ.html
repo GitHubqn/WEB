@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <title>Factorial</title>
+</head>
+<body>
+    <div class="card">
+        <h1 style="text-align: center;">Factorial</h1>
+        Введите факториал
+        <input id="num" />
+        <p>
+            <button onclick="factorial()">calculate</button>
+            <h3> Result = <span id="result-fact"></span> </h3>
+        </p>
+    </div>
+
+    <div class="card">
+        <h1 style="text-align: center;">Степень числа</h1>
+
+        Введите основание степени
+        <input id="num1" />
+        <br />
+        Введите показатель степени
+        <input id="num2" />
+        <br />
+
+        <p>
+            <button onclick="pow()">calculate</button>
+            <h3> Result = <span id="result-pow"></span> </h3>
+        </p>
+    </div>
+
+    <div class="card">
+        <h1 style="text-align: center;">Ряд Фибоначчи</h1>
+        Укажите номер числа в ряду
+        <input id="num-fibo" />
+        <p>
+            <button onclick="fibonacci()">calculate</button>
+            <h3> Result = <span id="result-fibo"></span> </h3>
+        </p>
+    </div>
+
+    <script>
+        function factorial() {
+            var n = document.getElementById("num").value;
+            var i, f = 1;
+            if (n < 0) {
+                document.getElementById("result-fact").innerHTML = "Error!";
+            }
+            else {
+                for (var i = 1; i < n; i++) {
+                    f *= i;
+                }
+                document.getElementById("result-fact").innerHTML = f;
+            }
+        }
+
+        function pow() {
+            var base = document.getElementById("num1").value;
+            var exp = document.getElementById("num2").value;
+
+            document.getElementById("result-pow").innerHTML = Math.pow(base, exp);
+        }
+
+        function fibonacci()
+        {
+            var n = document.getElementById("num-fibo").value;
+
+            if (n <= 1)
+                document.getElementById("result-fibo").innerHTML = n;
+
+            let a = 0, b = 1;
+            let temp;
+            for (let i = 2; i <= n; i++) {
+                temp = b;
+                b = a + b;
+                a = temp;
+            }
+            document.getElementById("result-fibo").innerHTML = b;
+        }
+    </script>
+</body>
+</html>
