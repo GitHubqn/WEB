@@ -15,10 +15,9 @@
 	align-items: center; /*Выравнивание по вертикали*/
 }
 
-.main-window
-{
-	width: 520px;
-	height: 420px;
+.main-window {
+	width: max-content;
+	height: max-content;
 	/*border:solid 1px;*/
 	font-family: Tahoma;
 }
@@ -147,6 +146,7 @@
 .display-buttons > button
 {
 	width: 128px;
+	height:44px;
 	color: red;
 	margin: 8px 5px;
 }
@@ -157,7 +157,6 @@
 	margin: 10px;
 	display: flex;
 	flex-direction: column;
-	border: solid 1px;
 }
 
 	#memory-buttons > button
@@ -172,7 +171,6 @@
 {
 	display: flex;
 	flex-direction: row;
-	border: solid 1px;
 }
 
 #digits
@@ -183,7 +181,6 @@
 	grid-gap: 10px;
 	margin: 10px 5px;
 	padding: 5px;
-	border: solid 1px;
 }
 
 	#digits > button
@@ -193,7 +190,21 @@
 		color: blue;
 		/*margin:5px;*/
 	}
+#operations {
+	display: grid;
+	grid-template-rows: 44px 44px 44px 44px;
+	grid-template-columns: 54px 54px;
+	grid-gap: 10px;
+	margin: 10px 5px;
+	padding: 5px;
+}
+	#operations > button {
+		color: red;
+	}
 
+button#sqrt, button#procent, button#drob {
+	color: blue;
+}
 button
 {
 	border: solid 1px darkblue;
