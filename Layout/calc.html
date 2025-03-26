@@ -27,55 +27,155 @@
 					<input type="button" value="Вид">
 					<input type="button" value="Справка">
 				</div>
-				<input type="text" value="0.">
+				
+				<input type="text" id="text" value="0.">
+
 				<div class="display-buttons">
 					<div class="display-buttons">
-						<button>Backspace</button>
-						<button>CE</button>
-						<button>C</button>
+						<button id="backspace" onclick="backspace()">	Backspace	</button>
+						<button id="ce" onclick="ce()">					CE			</button>
+						<button id="c"  onclick="c()">					C			</button>
 					</div>
 				</div>
 				<div class="buttons">
 					<div id="memory-buttons">
-						<button>MC</button>
-						<button>MR</button>
-						<button>MS</button>
-						<button>M+</button>
+						<button id="mc">MC</button>
+						<button id="mr">MR</button>
+						<button id="ms">MS</button>
+						<button id="m">M+</button>
 					</div>
 					<!--  -->
 					<div id="digits">
-						<button>7</button>
-						<button>8</button>
-						<button>9</button>
+						<button id="seven" onclick="seven()">	7</button>
+						<button id="eight" onclick="eight()">	8</button>
+						<button id="nine"  onclick="nine()">	9</button>
 						
-						<button>4</button>
-						<button>5</button>
-						<button>6</button>
+						<button id="four" onclick="four()">		4</button>
+						<button id="five" onclick="five()">		5</button>
+						<button id="six" onclick="six()">		6</button>
 
-						<button>1</button>
-						<button>2</button>
-						<button>3</button>
+						<button id="one" onclick="one()">		1</button>
+						<button id="two" onclick="two()">		2</button>
+						<button id="three" onclick="three()">	3</button>
 						
-						<button>0</button>
-						<button>+/-</button>
-						<button>.</button>
+						<button id="zero" onclick="zero()">		0		</button>
+						<button id="znak">						+/-		</button>
+						<button id="dot" onclick="dot()">		.		</button>
 					</div>
 					<!--  -->
 					<div id="operations">
-						<button>				/	</button>
-						<button id="sqrt">		sqrt</button>
-						<button>				*	</button>
+						<button id="divide">					/		</button>
+						<button id="sqrt">						sqrt	</button>
+						<button id="multiply">					*		</button>
 
-						<button id="procent">	%	</button>
-						<button>				-	</button>
-						<button id="drob">		1/x	</button>
+						<button id="procent">					%		</button>
+						<button id="minus">						-		</button>
+						<button id="drob">						1/x		</button>
 
-						<button>+</button>
-						<button>=</button>
+						<button id="plus">						+		</button>
+						<button id="equal">						=		</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+    <script>
+		function one() {
+			if (document.getElementById("text").value == 0) {
+				document.getElementById("text").value = 1;
+			} else {
+                document.getElementById("text").value += 1;
+			}
+		}
+        function two() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 2;
+            } else {
+                document.getElementById("text").value += 2;
+            }
+        }
+        function three() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 3;
+            } else {
+                document.getElementById("text").value += 3;
+            }
+        }
+        function four() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 4;
+            } else {
+                document.getElementById("text").value += 4;
+            }
+        }
+        function five() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 5;
+            } else {
+                document.getElementById("text").value += 5;
+            }
+        }
+        function six() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 6;
+            } else {
+                document.getElementById("text").value += 6;
+            }
+        }
+        function seven() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 7;
+            } else {
+                document.getElementById("text").value += 7;
+            }
+        } 
+        function eight() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 8;
+            } else {
+                document.getElementById("text").value += 8;
+            }
+        }
+        function nine() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 9;
+            } else {
+                document.getElementById("text").value += 9;
+            }
+		}
+        function zero() {
+            if (document.getElementById("text").value == 0) {
+                document.getElementById("text").value = 0;
+            } else {
+                document.getElementById("text").value += 0;
+            }
+		}
+		function dot() {
+			if (document.getElementById("text").value == 0) {
+				document.getElementById("text").value = "0.";
+			} else if (document.getElementById("text").value.includes('.') == false) {
+				document.getElementById("text").value += '.';
+			}
+		}
+
+		function backspace() {
+
+			let t = document.getElementById("text").value;
+			let nt;
+            if (t != 0) {
+				nt = t.substring(0, t.length - 1);
+				document.getElementById("text").value = nt;
+                if (nt == null || nt == "") {
+                    nt = "0.";
+                    document.getElementById("text").value = nt;
+
+                }
+			}
+		}
+
+		function sqrt(){
+		}
+	</script>
 </body>
 </html>

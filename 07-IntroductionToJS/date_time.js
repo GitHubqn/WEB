@@ -41,29 +41,85 @@ function checkNumber(i)
 	return i < 10 ? "0" + i : i;
 }
 
-function countdown_timer() {
+function start_timer()
+{
 	let user_date_input = document.getElementById("user-date");
 	let user_time_input = document.getElementById("user-time");
+	let user_datetime_local = document.getElementById("user-datetime-local");
+
 	let start_timer_button = document.getElementById("start-timer");
 
-	let user_date = new Date(user_date_input.value);
-	let user_time = new Date(user_time_input.value);
+	let user_date = user_date_input.valueAsDate;
+	let user_time = user_time_input.valueAsDate;
 
+	document.getElementById("user-values-date").innerHTML = user_date;
+	document.getElementById("user-values-time").innerHTML = user_time;
+	document.getElementById("user-datetime-local-values").innerHTML = user_datetime_local.value;
+	//document.getElementById("user-datetime-local-timestamp").innerHTML = new Date(user_datetime_local.value);
+	document.getElementById("user-datetime-local-timestamp").innerHTML = user_datetime_local.valueAsNumber;
 
-	document.getElementById("user-values-date").innerHTML = user_date.getMilliseconds();
-	document.getElementById("user-values-time").innerHTML = user_time.getMilliseconds();
 	if (start_timer_button.value === "Start" && user_date_input.value !== "" && user_time_input.value !== "")
 	{
 		start_timer_button.value = "Stop";
-		user_date_input.disabled = user_time_input.disabled = true;
+		user_date_input.disabled = user_time_input.disabled = user_datetime_local.disabled = true;
+		countdown_timer();
 	}
 	else
 	{
 		start_timer_button.value = "Start";
-		user_date_input.disabled = user_time_input.disabled = false;
-
+		user_date_input.disabled = user_time_input.disabled = user_datetime_local.disabled = false;
 	}
+}
 
+function countdown_timer()
+{
+	let user_datetime =  +new Date(document.getElementById("user-datetime-local").value);
+	let current_time = +new Date();
+	let timezone_offset = new Date().getTimezoneOffset()/60;
+	//current_time += timezone_offset * 3600000;
+
+	document.getElementById("current-timezone").innerHTML = `Current timezone: ${timezone_offset}`;
+	document.getElementById("user-timezone").innerHTML = `Current timezone: ${document.getElementById("user-datetime-local").valueAsDate.getTimezoneOffset()}`;
+	current_time = Math.trunc(current_time / 1000);
+	user_datetime = Math.trunc(user_datetime / 1000);
+	document.getElementById("current-timestamp").innerHTML = current_time;
+	let timestamp = user_datetime - current_time;
+	//timestamp = Math.trunc(timestamp / 1000);
+	document.getElementById("difference").innerHTML = timestamp;
+
+	const SECONDS_IN_MINUTE = 60;
+	const SECONDS_IN_HOUR = 3600;
+	const SECONDS_IN_DAY = 86400;
+	const SECONDS_IN_WEEK = 86400 * 7;
+	const DAYS_IN_MONTH = 365 / 12;
+	const SECONDS_IN_MONTH = DAYS_IN_MONTH * SECONDS_IN_DAY;
+	const SECONDS_IN_YEAR = SECONDS_IN_DAY * 365 + SECONDS_IN_HOUR * 6;
+
+	let years = Math.trunc(timestamp / SECONDS_IN_YEAR);
+	timestamp = Math.trunc(timestamp % SECONDS_IN_YEAR);
+
+	let monthes = Math.trunc(timestamp / SECONDS_IN_MONTH);
+	timestamp = Math.trunc(timestamp % SECONDS_IN_MONTH);
+
+	let weeks = Math.trunc(timestamp / SECONDS_IN_WEEK);
+	timestamp = Math.trunc(timestamp % SECONDS_IN_WEEK);
+
+	let days = Math.trunc(timestamp / SECONDS_IN_DAY);
+	timestamp = Math.trunc(timestamp % SECONDS_IN_DAY);
+
+	let hours = Math.trunc(timestamp / SECONDS_IN_HOUR);
+	timestamp = Math.trunc(timestamp % SECONDS_IN_HOUR);
+
+	let minutes = Math.trunc(timestamp / SECONDS_IN_MINUTE);
+	timestamp = Math.trunc(timestamp % SECONDS_IN_MINUTE);
+
+	let seconds = Math.trunc(timestamp);
+
+
+	document.getElementById("time-units").innerHTML =
+		`${years} years, ${monthes} monthes, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+	setTimeout(countdown_timer, 1000);
 }
 
 //alert(current_time);
